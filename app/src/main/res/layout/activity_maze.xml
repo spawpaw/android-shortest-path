@@ -1,0 +1,86 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.spawpaw.maze.MazeActivity"
+             android:id="@+id/fl_main">
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+        <FrameLayout
+                android:id="@+id/fl_content"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:background="#0099cc"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:gravity="start|bottom"
+                    android:id="@+id/tv_fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFF"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+                android:background="#CCC"
+                android:orientation="vertical"
+                android:isScrollContainer="true"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+            <TextView
+                    android:text="Generate Maze"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <EditText
+                    android:id="@+id/et_maze_width"
+                    android:hint="迷宫宽度"
+                    android:text="30"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <EditText
+                    android:id="@+id/et_maze_height"
+                    android:hint="迷宫高度"
+                    android:text="20"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <CheckBox
+                    android:id="@+id/cb_is_random"
+                    android:text="随机设置迷宫状态"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:id="@+id/btn_generate_maze"
+                    android:text="生成地图"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="Maze's Operation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:id="@+id/btn_find_way_out"
+                    android:text="寻找出口"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:id="@+id/btn_set_obstacle"
+                    android:text="设置障碍"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:id="@+id/btn_set_free"
+                    android:text="移除障碍"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

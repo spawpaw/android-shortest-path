@@ -1,0 +1,2 @@
+#Base Activities
+按顺序继承ibase包中的Activity

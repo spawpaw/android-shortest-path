@@ -1,0 +1,125 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#0099cc"
+             tools:context="com.spawpaw.shortestpath.ShortestPathActivity"
+>
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <FrameLayout
+            android:id="@+id/fullscreen_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:id="@+id/ll_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+            <FrameLayout
+                    android:id="@+id/fl_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                <com.spawpaw.shortestpath.MyImageView
+                        android:id="@+id/iv_map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/map_landscape"
+                        android:adjustViewBounds="true"/>
+            </FrameLayout>
+
+
+            <ScrollView android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            android:text="寻路算法"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                    <RadioGroup android:layout_width="wrap_content" android:layout_height="match_parent">
+                        <RadioButton android:checked="true"  android:text="Depth First" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                        <!--<RadioButton android:text="Dijkstra" android:layout_width="match_parent" android:layout_height="wrap_content"/>-->
+
+                    </RadioGroup>
+                    <Button
+                            android:id="@+id/btn_search_shortest_path"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="开始寻路"/>
+
+                    <TextView
+                            android:text="已保存的地图:"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                            android:id="@+id/cb_save_g"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="存储当前图"/>
+                    <Button
+                            android:id="@+id/btn_load_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="加载已存储的图"/>
+
+
+                    <TextView
+                            android:text="Vertex's Operation:"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                    <Button
+                            android:id="@+id/btn_mark_vertex"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="添加 Vertexes"/>
+
+                    <Button
+                            android:id="@+id/btn_delete_vertex"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="删除 Vertexes"/>
+                    <TextView
+                            android:text="edge's Operation:"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                    <Button
+                            android:id="@+id/btn_connect_vertex"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="添加 Edge"/>
+                    <!--<Button-->
+                            <!--android:id="@+id/btn_delete_edge"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Delete Edges"/>-->
+
+
+                    <TextView
+                            android:id="@+id/tv_log"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Log:\n"/>
+                </LinearLayout>
+            </ScrollView>
+
+
+        </LinearLayout>
+        <!--显示当前状态的TextView-->
+        <TextView
+                android:id="@+id/tv_statues"
+                android:text="current statues:..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:background="#FFFFFF"/>
+        <TextView
+                android:id="@+id/tv_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+
+</FrameLayout>
